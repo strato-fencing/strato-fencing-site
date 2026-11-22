@@ -7,18 +7,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="sf-nav.css?v=1" />
 </head>
-<body>
-<nav>
-  <a class="nav-logo" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy" class="nav-logo-img"></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="products.html">Services</a></li><li><a href="videos.html">Videos</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blogs.html" class="active">Blogs</a></li><li><a href="contact.html">Contact</a></li><li><a href="xenophon.html">Xenophon</a></li><li><a href="aristotle.html">Aristotle</a></li>
-  </ul>
-</nav>
+<body class="site-strato">
+<header class="sf-header">
+  <div class="sf-bar">
+    <a class="sf-brand" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy home" class="sf-logo"></a>
+    <div class="sf-links">
+      <nav class="sf-nav" aria-label="Strato Fencing"><a href="coaching.html">Coaching</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a><a href="blog.html" aria-current="page">Blog</a><a href="contact.html">Contact</a></nav>
+      <div class="sf-ext"><span class="sf-drawer-label">More from Strato Fencing</span><a href="https://xenophon.stratofencing.com/">Xenophon ↗</a><a href="https://aristotle.stratofencing.com/">Aristotle ↗</a></div>
+    </div>
+    <button type="button" class="sf-burger" aria-expanded="false" aria-label="Open menu"><svg class="sf-lines" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="sf-x" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+</header>
 <div class="page-body">
   <div class="page-header"><h1 class="page-header-title">A New Fencing Academy in Millburn</h1></div>
   <div class="content-wrap">
-    <div class="post-date">November 17, 2020 &nbsp;·&nbsp; <a href="blogs.html">← All Posts</a></div>
+    <div class="post-date">November 17, 2020 &nbsp;·&nbsp; <a href="blog.html">← All Posts</a></div>
     <div class="post-body">
       <p>Here in New Jersey, the sport of fencing is as popular as anywhere in the country. With over 100 high school programs and more than a dozen private fencing clubs in northern New Jersey alone, there's no shortage of opportunity to pick up a foil, épée, or sabre and cross blades with an opponent.</p>
       <p>The newest addition to the fencing scene is the boutique Strato Fencing Academy located right here in Millburn. Owned and operated by local resident Jon Normile, it offers lessons in foil and épée to dedicated and enthusiastic fencing students. Jon is an Olympic Fencer, a multiple-time former national champion, a world team champion, and a member of the US Fencing Hall of Fame. He has set up his spacious garage as a fully equipped fencing salle and is now looking for students who want to improve their skills and learn from his experience.</p>
@@ -28,9 +33,13 @@
     </div>
   </div>
 </div>
-<footer>
-  <div><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
-  <div class="footer-copy">&copy; 2025 Strato Fencing LLC &nbsp;·&nbsp; Millburn, NJ</div>
+<footer class="sf-footer">
+  <div class="sf-footer-inner">
+    <div class="sf-footer-brand"><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
+    <nav class="sf-footer-links" aria-label="Strato Fencing family"><a href="index.html">Strato Fencing</a><a href="https://xenophon.stratofencing.com/">Xenophon</a><a href="https://aristotle.stratofencing.com/">Aristotle</a><a href="contact.html">Contact</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav>
+    <p class="sf-legal">© 2025–2026 Strato Fencing LLC. All rights reserved. &nbsp;·&nbsp; Millburn, NJ</p>
+  </div>
 </footer>
+<script src="sf-nav.js?v=1"></script>
 </body>
 </html>

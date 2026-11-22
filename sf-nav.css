@@ -1,0 +1,231 @@
+/* Strato Fencing family header and footer (ticket 111). Shared design tokens are copied
+   into each site's repo, never loaded from stratofencing.com. Load after the page's own styles. */
+
+:root {
+  --sf-bar: #0a0a0a;
+  --sf-line: rgba(255,255,255,0.12);
+  --sf-text: rgba(255,255,255,0.72);
+  --sf-text-strong: #ffffff;
+  --sf-muted: rgba(255,255,255,0.62);
+  --sf-panel: #161a22;
+  --sf-badge: #f28c38;
+  --sf-ok: #3fb950;
+}
+.site-strato    { --sf-accent: #1b3d7a; --sf-accent-hi: #7aaaff; --sf-on-accent: #ffffff; }
+.site-xenophon  { --sf-accent: #3b82f6; --sf-accent-hi: #6ea8ff; --sf-on-accent: #ffffff; }
+.site-aristotle { --sf-accent: #6d4fc2; --sf-accent-hi: #b49cff; --sf-on-accent: #ffffff; }
+
+/* Shown or hidden by login state (set on <html data-auth>) */
+html[data-auth="out"] .auth-in,
+html[data-auth="in"] .auth-out,
+html:not([data-auth]) .auth-in { display: none !important; }
+
+/* ── HEADER ── */
+.sf-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  background: rgba(10,10,10,0.97);
+  border-bottom: 3px solid var(--sf-accent);
+  font-family: 'Barlow', sans-serif;
+}
+.sf-bar {
+  height: 64px;
+  display: flex; align-items: center; gap: 2rem;
+  padding: 0 2.5rem;
+  max-width: 1440px; margin: 0 auto;
+}
+.sf-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.sf-logo { height: 46px; width: auto; display: block; }
+.sf-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.sf-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--sf-muted);
+}
+.sf-name {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 1.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--sf-text-strong);
+}
+
+/* The old pages style every <nav>; reset that for ours */
+.sf-header nav.sf-nav {
+  position: static; height: auto; padding: 0; margin: 0;
+  background: none; border: 0; backdrop-filter: none;
+  display: flex; align-items: stretch; gap: 0; flex: 1; min-width: 0;
+  justify-content: flex-start;
+}
+.sf-nav a, .sf-ext a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sf-text); text-decoration: none;
+  height: 64px; padding: 0 1rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  border-bottom: 3px solid transparent; margin-bottom: -3px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sf-nav a:hover, .sf-ext a:hover { color: var(--sf-text-strong); }
+.sf-nav a[aria-current="page"] { color: var(--sf-text-strong); border-bottom-color: var(--sf-accent-hi); }
+.sf-ext { display: flex; align-items: stretch; padding-left: 1.2rem; border-left: 1px solid var(--sf-line); height: 32px; align-self: center; }
+.sf-ext a { height: 32px; margin: 0; border: 0; }
+.sf-soon {
+  font-family: 'Barlow', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 2px 7px; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; color: var(--sf-muted);
+}
+.sf-right { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; flex-shrink: 0; }
+.sf-btn {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; padding: 0.6rem 1.1rem; min-height: 40px;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: 1px solid transparent; border-radius: 4px; cursor: pointer;
+  white-space: nowrap;
+}
+.sf-btn-primary { background: var(--sf-accent); color: var(--sf-on-accent); }
+.sf-btn-primary:hover { filter: brightness(1.15); }
+.sf-btn-ghost { background: transparent; color: var(--sf-text-strong); border-color: rgba(255,255,255,0.35); }
+.sf-btn-ghost:hover { border-color: var(--sf-accent-hi); }
+
+/* Avatar menu */
+.sf-account { position: relative; }
+.sf-avatar {
+  position: relative; width: 44px; height: 44px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3); background: #1d2330; color: #fff;
+  font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+}
+.sf-avatar[aria-expanded="true"] { border-color: var(--sf-accent-hi); }
+.sf-badge {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 999px; background: var(--sf-badge); color: #111;
+  font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.sf-status-dot {
+  position: absolute; bottom: 0; right: 0; width: 11px; height: 11px; border-radius: 999px;
+  background: var(--sf-ok); border: 2px solid #0a0a0a;
+}
+.sf-menu {
+  position: absolute; right: 0; top: 54px; width: 250px;
+  background: var(--sf-panel); border: 1px solid var(--sf-line); border-radius: 8px;
+  padding: 6px; display: flex; flex-direction: column;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+.sf-menu[hidden] { display: none; }
+.sf-menu-who { padding: 10px 12px 12px; border-bottom: 1px solid var(--sf-line); margin-bottom: 6px; display: flex; flex-direction: column; gap: 2px; }
+.sf-menu-who strong { color: #fff; font-weight: 600; font-size: 0.95rem; }
+.sf-menu-who span { color: var(--sf-muted); font-size: 0.8rem; }
+.sf-menu a, .sf-menu button {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Barlow', sans-serif; font-size: 0.95rem; color: #fff; text-decoration: none;
+  padding: 10px 12px; border-radius: 6px; background: none; border: 0; text-align: left; cursor: pointer; width: 100%;
+}
+.sf-menu a:hover, .sf-menu button:hover { background: rgba(255,255,255,0.07); }
+.sf-menu .sf-count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--sf-badge); color: #111; font-size: 0.75rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.sf-menu-status { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 0.8rem; color: var(--sf-muted); }
+.sf-menu-status i { width: 8px; height: 8px; border-radius: 999px; background: var(--sf-ok); display: inline-block; }
+.sf-menu-sep { border-top: 1px solid var(--sf-line); margin-top: 4px; padding-top: 4px; }
+
+/* Hamburger */
+.sf-burger {
+  display: none; width: 44px; height: 44px; margin-left: 0.25rem;
+  background: none; border: 0; color: #fff; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.sf-burger .sf-x { display: none; }
+.sf-header.sf-open .sf-burger .sf-x { display: block; }
+.sf-header.sf-open .sf-burger .sf-lines { display: none; }
+.sf-drawer-label { display: none; }
+
+.sf-links { display: flex; align-items: stretch; flex: 1; min-width: 0; }
+@media (max-width: 1100px) {
+  .sf-bar { padding: 0 0.75rem 0 1.2rem; gap: 0.5rem; }
+  .sf-burger { display: inline-flex; }
+  .sf-links { display: none; }
+  .sf-right .sf-btn-ghost, .sf-right .sf-hide-phone { display: none; }
+  .sf-right .sf-btn-primary .sf-btn-text { display: none; }
+  .sf-header.sf-open .sf-links {
+    display: flex; flex-direction: column; align-items: stretch;
+    position: fixed; top: 67px; left: 0; right: 0; bottom: 0;
+    background: #0a0a0a; padding: 1rem 1.5rem 5rem; overflow-y: auto;
+  }
+  .sf-header.sf-open nav.sf-nav { flex-direction: column; flex: none; }
+  .sf-header.sf-open .sf-ext { flex-direction: column; height: auto; border-left: 0; border-top: 1px solid var(--sf-line); padding: 1rem 0 0; margin-top: 1rem; align-self: stretch; }
+  .sf-header.sf-open .sf-nav a, .sf-header.sf-open .sf-ext a {
+    height: auto; padding: 0.7rem 0; font-size: 1.5rem; letter-spacing: 0.06em; border: 0; margin: 0;
+  }
+  .sf-header.sf-open .sf-nav a[aria-current="page"] { color: var(--sf-accent-hi); }
+  .sf-header.sf-open .sf-ext a { font-size: 1.05rem; }
+  .sf-header.sf-open .sf-drawer-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; color: var(--sf-muted); text-transform: uppercase; padding-top: 0.3rem; }
+  .sf-header.sf-open .sf-drawer-only { display: flex !important; }
+  .sf-name { font-size: 1.3rem; }
+  .sf-logo { height: 40px; }
+}
+.sf-drawer-only { display: none !important; }
+
+/* ── FOOTER ── */
+footer.sf-footer {
+  display: block; grid-template-columns: none;
+  background: #141414; border-top: 3px solid var(--sf-accent);
+  padding: 0; margin: 0; text-align: left;
+  font-family: 'Barlow', sans-serif;
+}
+.sf-footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 1.8rem 2.5rem 1.5rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+}
+.sf-footer-brand { display: flex; flex-direction: column; gap: 0.25rem; }
+.sf-footer-brand .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+.sf-footer-brand .footer-logo span { color: #7aaaff; }
+.sf-footer-brand .footer-schola { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-align: left; }
+.sf-footer-brand a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; }
+.sf-footer-brand a:hover { color: #fff; }
+.sf-footer-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+.sf-footer-links a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.92rem; }
+.sf-footer-links a:hover { color: #fff; }
+.sf-legal { flex-basis: 100%; margin: 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.55); }
+
+/* Some app pages have no global box-sizing reset */
+.sf-header, .sf-header *, .sf-footer, .sf-footer * { box-sizing: border-box; }
+/* The old pages style every <nav> as a fixed top bar; keep the footer's links in the footer */
+footer.sf-footer nav.sf-footer-links {
+  position: static; height: auto; padding: 0; margin: 0; z-index: auto;
+  background: none; border: 0; backdrop-filter: none; justify-content: flex-start;
+  flex-shrink: 1; min-width: 0;
+}
+
+/* Cross-site links: compact so they fit beside the login and account controls */
+.sf-ext a { font-size: 0.78rem; letter-spacing: 0.1em; padding: 0 0.7rem; }
+.sf-links { gap: 0.5rem; }
+@media (max-width: 1240px) {
+  .sf-nav a { padding: 0 0.7rem; letter-spacing: 0.12em; }
+  .sf-bar { gap: 1.2rem; padding: 0 1.5rem; }
+}
+/* Keep menu items from being squeezed under the cross-site links */
+.sf-header nav.sf-nav { flex: 1 0 auto; }
+@media (max-width: 1240px) {
+  .sf-ext { padding-left: 0.6rem; }
+  .sf-ext a { padding: 0 0.5rem; letter-spacing: 0.08em; }
+  .sf-nav a { padding: 0 0.55rem; }
+  .sf-soon { padding: 2px 5px; }
+}
+
+/* New Bout sits in the menu, right after Bouts (decision 12) */
+.sf-header .sf-nav a.sf-nav-btn {
+  height: auto; min-height: 36px; align-self: center;
+  padding: 0.4rem 0.85rem; margin: 0 0.5rem 0 0.15rem;
+  border: 1px solid transparent; border-radius: 4px;
+  font-size: 0.8rem; letter-spacing: 0.1em; color: var(--sf-on-accent);
+}
+.sf-header .sf-nav a.sf-nav-btn:hover { color: var(--sf-on-accent); }
+/* On phones a compact + button stays in the top bar; the menu also lists New Bout */
+.sf-right .sf-phone-only { display: none; }
+@media (max-width: 1100px) {
+  .sf-right .sf-phone-only { display: inline-flex; }
+  .sf-header.sf-open .sf-nav a.sf-nav-btn { align-self: flex-start; font-size: 1.05rem; padding: 0.6rem 1rem; margin: 0.4rem 0; }
+}
+
+/* Filled in by sf-nav.js once the user is known */
+.sf-badge[hidden], .sf-status-dot[hidden], .sf-count[hidden], [data-sf-super][hidden] { display: none !important; }
+.sf-status-dot.sf-dot-waking, .sf-menu-status i.sf-dot-waking { background: #e3b341; }
+.sf-status-dot.sf-dot-offline, .sf-menu-status i.sf-dot-offline { background: #e05252; }
+.sf-status-dot.sf-dot-checking, .sf-menu-status i.sf-dot-checking { background: #8b949e; }
+body.sf-has-header { padding-top: 67px; }

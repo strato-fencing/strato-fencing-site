@@ -16,14 +16,19 @@
     .qr-close:focus-visible { outline: 3px solid var(--accentlt); outline-offset: 2px; }
     body.qr-open { overflow: hidden; }
   </style>
+  <link rel="stylesheet" href="sf-nav.css?v=1" />
 </head>
-<body>
-<nav>
-  <a class="nav-logo" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy" class="nav-logo-img"></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="products.html">Services</a></li><li><a href="videos.html">Videos</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blogs.html">Blogs</a></li><li><a href="contact.html" class="active">Contact</a></li><li><a href="xenophon.html">Xenophon</a></li><li><a href="aristotle.html">Aristotle</a></li>
-  </ul>
-</nav>
+<body class="site-strato">
+<header class="sf-header">
+  <div class="sf-bar">
+    <a class="sf-brand" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy home" class="sf-logo"></a>
+    <div class="sf-links">
+      <nav class="sf-nav" aria-label="Strato Fencing"><a href="coaching.html">Coaching</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html" aria-current="page">Contact</a></nav>
+      <div class="sf-ext"><span class="sf-drawer-label">More from Strato Fencing</span><a href="https://xenophon.stratofencing.com/">Xenophon ↗</a><a href="https://aristotle.stratofencing.com/">Aristotle ↗</a></div>
+    </div>
+    <button type="button" class="sf-burger" aria-expanded="false" aria-label="Open menu"><svg class="sf-lines" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="sf-x" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+</header>
 <div class="page-body">
   <div class="page-header"><h1 class="page-header-title">Contact Me</h1></div>
   <div class="content-wrap-wide">
@@ -90,9 +95,12 @@
     </div>
   </div>
 </div>
-<footer>
-  <div><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
-  <div class="footer-copy">&copy; 2025 Strato Fencing LLC &nbsp;·&nbsp; Millburn, NJ</div>
+<footer class="sf-footer">
+  <div class="sf-footer-inner">
+    <div class="sf-footer-brand"><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
+    <nav class="sf-footer-links" aria-label="Strato Fencing family"><a href="index.html">Strato Fencing</a><a href="https://xenophon.stratofencing.com/">Xenophon</a><a href="https://aristotle.stratofencing.com/">Aristotle</a><a href="contact.html">Contact</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav>
+    <p class="sf-legal">© 2025–2026 Strato Fencing LLC. All rights reserved. &nbsp;·&nbsp; Millburn, NJ</p>
+  </div>
 </footer>
 <div class="qr-overlay" id="qrOverlay" role="dialog" aria-modal="true" aria-label="Enlarged QR code" hidden>
   <button class="qr-close" id="qrClose" type="button" aria-label="Close">&times;</button>
@@ -151,5 +159,6 @@
     submit.textContent = 'Send Message'; submit.disabled = false;
   });
 </script>
+<script src="sf-nav.js?v=1"></script>
 </body>
 </html>

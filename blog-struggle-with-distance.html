@@ -7,18 +7,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="sf-nav.css?v=1" />
 </head>
-<body>
-<nav>
-  <a class="nav-logo" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy" class="nav-logo-img"></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="products.html">Services</a></li><li><a href="videos.html">Videos</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blogs.html" class="active">Blogs</a></li><li><a href="contact.html">Contact</a></li><li><a href="xenophon.html">Xenophon</a></li><li><a href="aristotle.html">Aristotle</a></li>
-  </ul>
-</nav>
+<body class="site-strato">
+<header class="sf-header">
+  <div class="sf-bar">
+    <a class="sf-brand" href="index.html"><img src="strato-logo.svg" alt="Strato Fencing Academy home" class="sf-logo"></a>
+    <div class="sf-links">
+      <nav class="sf-nav" aria-label="Strato Fencing"><a href="coaching.html">Coaching</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a><a href="blog.html" aria-current="page">Blog</a><a href="contact.html">Contact</a></nav>
+      <div class="sf-ext"><span class="sf-drawer-label">More from Strato Fencing</span><a href="https://xenophon.stratofencing.com/">Xenophon ↗</a><a href="https://aristotle.stratofencing.com/">Aristotle ↗</a></div>
+    </div>
+    <button type="button" class="sf-burger" aria-expanded="false" aria-label="Open menu"><svg class="sf-lines" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="sf-x" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+</header>
 <div class="page-body">
   <div class="page-header"><h1 class="page-header-title">My Struggle with Distance</h1></div>
   <div class="content-wrap">
-    <div class="post-date">January 28, 2017 &nbsp;·&nbsp; <a href="blogs.html">← All Posts</a></div>
+    <div class="post-date">January 28, 2017 &nbsp;·&nbsp; <a href="blog.html">← All Posts</a></div>
     <div class="post-body">
       <p>Dr. Kogler has asked me to share my experiences of how I learned to fence at the right distance. By way of introduction, I am a long-time student of Dr. Kogler and had the privilege of taking lessons from him for over 15 years. This was a truly priceless experience that gave me a better-than-average understanding of the sport of fencing. I started working with Dr. Kogler as a freshman on the Columbia University fencing team and I stayed with him throughout my collegiate career. As I rose to the level of the US National team, I continued to work with Dr. Kogler for many years after.</p>
       <p>One lesson that Dr. Kogler tried to teach, that I had a very hard time learning, was the correct distance to keep with my opponent. While my fencing lessons with Dr. Kogler covered the full syllabus of Hungarian épée technique, it was this subject that he correctly identified as my chief failing. Dr. Kogler observed that I fenced at a distance that was too far and this made my actions much less effective.</p>
@@ -38,9 +43,13 @@
     </div>
   </div>
 </div>
-<footer>
-  <div><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
-  <div class="footer-copy">&copy; 2025 Strato Fencing LLC &nbsp;·&nbsp; Millburn, NJ</div>
+<footer class="sf-footer">
+  <div class="sf-footer-inner">
+    <div class="sf-footer-brand"><div class="footer-logo">Strato <span>Fencing</span> Academy</div><div class="footer-schola">Schola Gladii Veritatis</div></div>
+    <nav class="sf-footer-links" aria-label="Strato Fencing family"><a href="index.html">Strato Fencing</a><a href="https://xenophon.stratofencing.com/">Xenophon</a><a href="https://aristotle.stratofencing.com/">Aristotle</a><a href="contact.html">Contact</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav>
+    <p class="sf-legal">© 2025–2026 Strato Fencing LLC. All rights reserved. &nbsp;·&nbsp; Millburn, NJ</p>
+  </div>
 </footer>
+<script src="sf-nav.js?v=1"></script>
 </body>
 </html>

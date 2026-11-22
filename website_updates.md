@@ -417,3 +417,13 @@ latest version is filtered out, an earlier one shown first is still labelled "Ea
 #81 ✅ Aristotle admin Answers: blank answers never count as recent answers
 Follow-up to #80: the past 24 hours / 7 days filters skip answer versions whose value is blank (cleared text, empty
 selection). Pairs with Xenophon #408, which fixes the Answers (24h / 7d) stat tiles.
+
+#82 ✅ New family header, footer and redirects (ticket 111, story 5)
+Every page gets the shared Strato Fencing header (`sf-nav.css` / `sf-nav.js`, copied from Xenophon): épée logo as the
+home link, Coaching · Videos · Gallery · Blog · Contact, then Xenophon ↗ and Aristotle ↗ to the subdomains; below
+1100px a hamburger opens a full-screen menu. New footer with links (Strato Fencing · Xenophon · Aristotle · Contact ·
+Terms · Privacy) and `© 2025–2026 Strato Fencing LLC. All rights reserved. · Millburn, NJ`. `products.html` →
+`coaching.html` and `blogs.html` → `blog.html` (old names redirect). New placeholder `terms.html` / `privacy.html`.
+`xenophon.html`, `xenophon-faq.html`, `aristotle.html`, `aristotle-community.html` are now redirect stubs to
+xenophon.stratofencing.com (/, /faq) and aristotle.stratofencing.com (/, /discussion.html), keeping query and hash.
+Deploy only after Xenophon #444–#446 are live and aristotle.stratofencing.com is up. Contact form unchanged.
