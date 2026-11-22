@@ -427,3 +427,8 @@ Terms · Privacy) and `© 2025–2026 Strato Fencing LLC. All rights reserved. �
 `xenophon.html`, `xenophon-faq.html`, `aristotle.html`, `aristotle-community.html` are now redirect stubs to
 xenophon.stratofencing.com (/, /faq) and aristotle.stratofencing.com (/, /discussion.html), keeping query and hash.
 Deploy only after Xenophon #444–#446 are live and aristotle.stratofencing.com is up. Contact form unchanged.
+
+#83 ✅ Aristotle: Account and Admin moved into the avatar menu (ticket 111 follow-up)
+Requested: the Discussion page sub-bar (Answers & Discussion · Account · Admin) repeated what the header offers.
+Done in the aristotle-site repo: removed the sub-bar and its "Logged in as" line from `discussion.html`; the avatar menu on
+both pages now has Account plus Admin (super user only, via `is_super_user` from Xenophon `/api/user`).
