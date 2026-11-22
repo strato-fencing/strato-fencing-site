@@ -451,3 +451,6 @@ Done: Xenophon's home page no longer redirects logged-in visitors to Bouts, so t
 
 #88 ✅ Aristotle "Discussion" page renamed "Community" (aristotle-site)
 Done: page title, page heading, logged-out heading, menu item and the "Go to Community" button on aristotle.stratofencing.com. The address stays discussion.html so existing links keep working. Separate from Xenophon's new Community page (#458), which will have its own functions.
+
+#89 ✅ Top banner centered on all three sites (Strato, Xenophon #459, Aristotle)
+Done: `sf-nav.css`: on desktop the logo, menu, cross-site links and account sit together in the middle of the screen, still left to right. Compact spacing starts below 1320px. Cache version bumped on every page.
