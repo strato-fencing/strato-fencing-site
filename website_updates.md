@@ -432,3 +432,9 @@ Deploy only after Xenophon #444–#446 are live and aristotle.stratofencing.com 
 Requested: the Discussion page sub-bar (Answers & Discussion · Account · Admin) repeated what the header offers.
 Done in the aristotle-site repo: removed the sub-bar and its "Logged in as" line from `discussion.html`; the avatar menu on
 both pages now has Account plus Admin (super user only, via `is_super_user` from Xenophon `/api/user`).
+
+#84 ✅ Aristotle: profile photo in the avatar (ticket 111 follow-up; Xenophon #450)
+Requested: show the avatar photo uploaded in Xenophon on Aristotle too.
+Done in the aristotle-site repo: `sf-nav.js`/`sf-nav.css` re-synced with Xenophon's copy (adds `SFNav.setPhoto`);
+`aristotle-questions.js` `fillHeader` passes `avatar_url` prefixed with the Xenophon host. The image request carries the
+shared `.stratofencing.com` login cookie (SameSite=Lax, same site). Photo is uploaded on Xenophon's Account page.
