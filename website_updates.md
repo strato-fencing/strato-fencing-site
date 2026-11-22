@@ -448,3 +448,6 @@ Done: `coaching.html` link now goes to https://xenophon.stratofencing.com/?publi
 
 #87 ✅ Coaching page "Xenophon platform" link back to plain https://xenophon.stratofencing.com/ (Xenophon #454)
 Done: Xenophon's home page no longer redirects logged-in visitors to Bouts, so the `?public=1` added in #86 is unnecessary.
+
+#88 ✅ Aristotle "Discussion" page renamed "Community" (aristotle-site)
+Done: page title, page heading, logged-out heading, menu item and the "Go to Community" button on aristotle.stratofencing.com. The address stays discussion.html so existing links keep working. Separate from Xenophon's new Community page (#458), which will have its own functions.
