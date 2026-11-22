@@ -229,10 +229,3 @@ footer.sf-footer nav.sf-footer-links {
 .sf-status-dot.sf-dot-offline, .sf-menu-status i.sf-dot-offline { background: #e05252; }
 .sf-status-dot.sf-dot-checking, .sf-menu-status i.sf-dot-checking { background: #8b949e; }
 body.sf-has-header { padding-top: 67px; }
-
-/* Desktop: the whole banner (logo, menu, links, account) sits together in the middle of the screen, still left to right */
-@media (min-width: 1101px) {
-  .sf-bar { justify-content: center; }
-  .sf-links, .sf-header nav.sf-nav { flex: 0 0 auto; }
-  .sf-right { margin-left: 0; }
-}
