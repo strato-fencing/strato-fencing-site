@@ -441,3 +441,7 @@ shared `.stratofencing.com` login cookie (SameSite=Lax, same site). Photo is upl
 
 #85 ✅ xenophon-faq.html redirect stub points at the new Xenophon Instructions address (Xenophon #453)
 Done: `xenophon-faq.html` now redirects to https://xenophon.stratofencing.com/instructions (was /faq, which now itself redirects there).
+
+#86 ✅ Coaching page: "Xenophon platform" link opens the Xenophon home page
+Requested: the link pointed at Xenophon's Bouts page (logged-in visitors to xenophon.stratofencing.com/ are sent to /app/bouts).
+Done: `coaching.html` link now goes to https://xenophon.stratofencing.com/?public=1, which shows the home page whether or not the visitor is logged in.
