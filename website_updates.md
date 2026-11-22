@@ -438,3 +438,6 @@ Requested: show the avatar photo uploaded in Xenophon on Aristotle too.
 Done in the aristotle-site repo: `sf-nav.js`/`sf-nav.css` re-synced with Xenophon's copy (adds `SFNav.setPhoto`);
 `aristotle-questions.js` `fillHeader` passes `avatar_url` prefixed with the Xenophon host. The image request carries the
 shared `.stratofencing.com` login cookie (SameSite=Lax, same site). Photo is uploaded on Xenophon's Account page.
+
+#85 ✅ xenophon-faq.html redirect stub points at the new Xenophon Instructions address (Xenophon #453)
+Done: `xenophon-faq.html` now redirects to https://xenophon.stratofencing.com/instructions (was /faq, which now itself redirects there).
