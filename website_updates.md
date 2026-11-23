@@ -457,3 +457,6 @@ Done: `sf-nav.css`: on desktop the logo, menu, cross-site links and account sit 
 
 #90 ✅ Top banner back to how it was; home-page hero centered instead (corrects #89; Xenophon #460)
 Done: removed the #89 centering rule from `sf-nav.css`; the home-page hero (title, Book a Lesson, subtitle) is now a 1200px block centered on the screen, text still left-aligned. Same on Xenophon and Aristotle home pages.
+
+#91 ✅ New Strato Fencing logo in the top banner
+Done: `strato-logo.png` made from the new Gemini logo (cropped, black background made transparent, 184px tall for sharp display); all 11 pages now use it in place of `strato-logo.svg` (the SVG file is kept).
